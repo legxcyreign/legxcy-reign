@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGXCY REIGN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <h1>LEGXCY REIGN</h1>
+    <p>Official Music Website</p>
+</section>
+
+<!-- MUSIC -->
+<section id="music" class="music-section">
+    <h2>Latest Releases</h2>
+    <div id="music-container"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+    <h2>About</h2>
+    <p>
+        Welcome to LEGXCY REIGN. This is where music, visuals, and energy come together.
+        Stay locked in for new drops, visuals, and exclusive content.
+    </p>
+</section>
+
+<!-- MERCH -->
+<section id="merch" class="merch-section">
+    <h2>Merch</h2>
+    <p>Official merch dropping soon 🔥 Stay tuned.</p>
+    <div class="merch-container">
+        <div class="merch-item">
+            <img src="shirt.jpg" alt="LEGXCY Shirt">
+            <p>LEGXCY Shirt</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="merch-item">
+            <img src="hoodie.jpg" alt="LEGXCY Hoodie">
+            <p>LEGXCY Hoodie</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- EMAIL -->
+<section class="email-signup">
+    <h2>Join The Movement</h2>
+    <input type="email" placeholder="Enter your email">
+    <br>
+    <button>Subscribe</button>
+</section>
+
+<!-- BOTTOM NAVBAR -->
+<nav class="navbar">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#merch">Merch</a></li>
+    </ul>
+</nav>
+
+<!-- JAVASCRIPT -->
+<script>
+const songs = [
+    {
+        title: "Let Me See Ft Malo",
+        thumbnail: "my-music-thumbnail.jpg",
+        url: "684Ml1y9FPw"
+    },
+    {
+        title: "Da Houss On Dekalb",
+        thumbnail: "my-second-thumbnail.jpg",
+        url: "lYdlfkrb-Xw"
+    }
+];
+
+const container = document.getElementById("music-container");
+
+songs.forEach(song => {
+    const card = document.createElement("div");
+    card.className = "music-card";
+
+    card.innerHTML = `
+        <div class="music-banner">
+            <img src="${song.thumbnail}" class="music-img">
+        </div>
+        <p>${song.title}</p>
+    `;
+
+    card.onclick = () => {
+        window.open("https://youtu.be/" + song.url, "_blank");
+    };
+
+    container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
