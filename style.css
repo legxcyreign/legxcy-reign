@@ -1,141 +1,272 @@
-/* GENERAL */
+/* --------------------------
+   GENERAL RESET
+--------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: Arial;
-    background: black;
-    color: white;
-    scroll-behavior: smooth;
+  background-color: #0f0f0f;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* SECTIONS FIX (so navbar doesn't cover content) */
-section {
-    padding: 100px 20px 150px 20px; /* extra bottom padding for navbar */
-}
-
-/* HERO */
+/* --------------------------
+   HERO SECTION
+--------------------------- */
 .hero {
-    height: 100vh;
-    background: url("my-hero-photo.jpg") center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: url('my-hero-photo.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
+/* Musical notes canvas */
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.hero h1, .hero p {
-    position: relative;
-    z-index: 1;
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
-/* MUSIC GRID */
-#music-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+/* Hero text */
+.hero-title, .hero-subtitle {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  text-shadow: 2px 2px 12px #000;
 }
 
-.music-card {
-    cursor: pointer;
-    transition: transform 0.3s;
+.hero-title {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
 }
 
-.music-card:hover {
-    transform: scale(1.05);
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 2s 0.5s forwards;
 }
 
-.music-img {
-    width: 100%;
-    border-radius: 10px;
+/* Fade animation */
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
-/* ABOUT */
-.about-section {
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-}
-
-/* MERCH */
-.merch-section {
-    text-align: center;
-    background: #111;
-    padding-bottom: 50px;
-}
-
-.merch-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.merch-item {
-    width: 200px;
-}
-
-.merch-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* EMAIL */
-.email-signup {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-button {
-    background: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-/* BOTTOM NAVBAR */
+/* --------------------------
+   NAVBAR
+--------------------------- */
 .navbar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: black;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20,20,20,0.95);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.8rem 0;
+  z-index: 999;
 }
 
-.navbar ul {
-    display: flex;
-    gap: 50px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
+.nav-link:hover {
+  color: #ff0055;
+  transform: scale(1.1);
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-    .navbar ul {
-        gap: 20px;
-    }
+/* --------------------------
+   MUSIC SECTION
+--------------------------- */
+.music-section {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
 
-    .hero h1 {
-        font-size: 32px;
-    }
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Scroll animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Song cards */
+.song-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(30,30,30,0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 90%;
+  max-width: 500px;
+}
+
+.song-card:hover {
+  background: rgba(50,50,50,1);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0055;
+}
+
+/* Thumbnails */
+.song-thumb {
+  width: 70px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+/* Song info */
+.song-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Play icon */
+.play-icon {
+  font-size: 1.2rem;
+  color: #ff0055;
+  margin-top: 0.3rem;
+  animation: pulse 1.5s infinite;
+}
+
+.song-card:hover .play-icon {
+  animation: pulse 0.7s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* --------------------------
+   ABOUT SECTION
+--------------------------- */
+.about-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* --------------------------
+   MERCH SECTION
+--------------------------- */
+.merch-section {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+/* Flip cards */
+.merch-card {
+  perspective: 1000px;
+  width: 180px;
+  cursor: pointer;
+}
+
+.merch-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  background: rgba(40,40,40,0.9);
+  border-radius: 12px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.merch-card:hover .merch-inner {
+  transform: rotateY(180deg);
+}
+
+.merch-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------
+   SMOOTH SCROLL
+--------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------
+   MOBILE RESPONSIVENESS
+--------------------------- */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .song-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .merch-section {
+    gap: 1rem;
+  }
 }
