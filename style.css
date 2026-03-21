@@ -835,9 +835,10 @@ section h2 {
   margin-top: 20px;
 }
 
-.kid-card {
+.kid-card,
+.freestyle-card {
   max-width: 760px;
-  margin: 0 auto;
+  margin: 0 auto 12px;
 }
 
 .kid-card .album-track-number {
@@ -849,6 +850,17 @@ section h2 {
     0 16px 32px rgba(0,0,0,0.24),
     0 0 22px rgba(0,161,255,0.22);
   border-color: rgba(0,161,255,0.24);
+}
+
+.freestyle-card .album-track-number {
+  color: #ffb56a;
+}
+
+.freestyle-card.playing {
+  box-shadow:
+    0 16px 32px rgba(0,0,0,0.24),
+    0 0 22px rgba(255,181,106,0.22);
+  border-color: rgba(255,181,106,0.24);
 }
 
 /* MERCH */
@@ -974,6 +986,7 @@ section h2 {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .connect-input {
@@ -1671,6 +1684,7 @@ body.cinematic-active .fullscreen-bg-art {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.92em;
 }
 
 /* MOBILE */
@@ -1815,5 +1829,9 @@ body.cinematic-active .fullscreen-bg-art {
 
   .cinematic-takeover-frame {
     border-radius: 18px;
+  }
+
+  .bottom-tabs a {
+    font-size: 0.78em;
   }
 }

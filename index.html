@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEGXCY REIGN</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ4X3X83E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QMQ4X3X83E');
+  </script>
 </head>
 <body class="site-loading">
 
@@ -178,6 +187,81 @@
     </div>
   </section>
 
+  <!-- FREESTYLES -->
+  <section id="freestyles" class="service-section intro-fade delay-2">
+    <div class="service-shell">
+      <span class="service-kicker">FREESTYLES</span>
+      <h2>Loose bars over non-owned instrumentals</h2>
+      <p>
+        Freestyles recorded over non-owned instrumentals. All rights belong to original producers. This section is for creative expression only.
+      </p>
+
+      <div class="kid-track-wrap">
+
+        <div class="album-track music-card freestyle-card"
+             data-index="3"
+             data-title="Legxcy's Club"
+             data-artist="LEGXCY REIGN"
+             data-cover="Legxcys-Club-Thumbnail.jpg">
+          <div class="album-track-left">
+            <span class="album-track-number">F1</span>
+            <img src="Legxcys-Club-Thumbnail.jpg" alt="Legxcy's Club" class="album-track-thumb" />
+            <div class="album-track-text">
+              <h4>Legxcy's Club</h4>
+              <p>Freestyle</p>
+            </div>
+          </div>
+
+          <div class="album-track-right">
+            <audio src="Legxcys-Club-preview.mp3"></audio>
+            <div class="progress-track"><div class="progress-bar"></div></div>
+          </div>
+        </div>
+
+        <div class="album-track music-card freestyle-card"
+             data-index="4"
+             data-title="Twerk ft Malo"
+             data-artist="LEGXCY REIGN"
+             data-cover="Twerk-Ft-Malo-Thumbnail.jpg">
+          <div class="album-track-left">
+            <span class="album-track-number">F2</span>
+            <img src="Twerk-Ft-Malo-Thumbnail.jpg" alt="Twerk ft Malo" class="album-track-thumb" />
+            <div class="album-track-text">
+              <h4>Twerk ft Malo</h4>
+              <p>Freestyle</p>
+            </div>
+          </div>
+
+          <div class="album-track-right">
+            <audio src="Twerk-Ft-Malo-preview.mp3"></audio>
+            <div class="progress-track"><div class="progress-bar"></div></div>
+          </div>
+        </div>
+
+        <div class="album-track music-card freestyle-card"
+             data-index="5"
+             data-title="Im Here Now ft B Riggs & Malo"
+             data-artist="LEGXCY REIGN"
+             data-cover="Im-Here-Now-Ft-B-Riggs-Malo-Thumbnail.jpg">
+          <div class="album-track-left">
+            <span class="album-track-number">F3</span>
+            <img src="Im-Here-Now-Ft-B-Riggs-Malo-Thumbnail.jpg" alt="Im Here Now ft B Riggs & Malo" class="album-track-thumb" />
+            <div class="album-track-text">
+              <h4>Im Here Now ft B Riggs & Malo</h4>
+              <p>Freestyle</p>
+            </div>
+          </div>
+
+          <div class="album-track-right">
+            <audio src="Im-Here-Now-Ft-B-Riggs-Malo-preview.mp3"></audio>
+            <div class="progress-track"><div class="progress-bar"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- TAP IN EVERYWHERE -->
   <section id="links" class="links-section intro-fade delay-2">
     <div class="links-shell">
@@ -247,7 +331,7 @@
 
       <div class="kid-track-wrap">
         <div class="album-track music-card kid-card"
-             data-index="3"
+             data-index="6"
              data-title="Little Jingle Stars"
              data-artist="Kid Reign"
              data-cover="kids-xmas-cover.jpg">
@@ -310,9 +394,17 @@
       <h2>Get updates on new drops</h2>
       <p>New music. New visuals. New merch. Be first when it lands.</p>
 
-      <form id="emailCaptureForm" class="connect-form">
+      <form
+        id="emailCaptureForm"
+        class="connect-form"
+        action="https://gmail.us13.list-manage.com/subscribe/post?u=e4dfd121c910390ea64aee0e9&amp;id=708b3075c1&amp;f_id=001d03e9f0"
+        method="post"
+        target="_blank"
+        novalidate
+      >
         <input
           type="email"
+          name="EMAIL"
           id="emailCaptureInput"
           class="connect-input"
           placeholder="Enter your email"
@@ -320,6 +412,10 @@
           required
         />
         <button type="submit" class="connect-button">Tap In</button>
+
+        <div aria-hidden="true" style="position:absolute; left:-5000px;">
+          <input type="text" name="b_e4dfd121c910390ea64aee0e9_708b3075c1" tabindex="-1" value="">
+        </div>
       </form>
 
       <p id="emailCaptureMessage" class="connect-message" aria-live="polite"></p>
@@ -422,7 +518,7 @@
         <input type="range" id="fullscreenVolumeSlider" min="0" max="1" step="0.01" value="1" />
       </div>
 
-      <div class="fullscreen-youtube-wrap">
+      <div class="fullscreen-youtube-wrap" id="fullscreenYoutubeWrap">
         <a id="fullscreenYoutubeLink" href="#" target="_blank" rel="noopener noreferrer">▶ Open on YouTube</a>
       </div>
     </div>
@@ -450,6 +546,7 @@
   <nav class="bottom-tabs">
     <a href="#about">About</a>
     <a href="#music">Album</a>
+    <a href="#freestyles">Freestyles</a>
     <a href="#links">Links</a>
     <a href="#merch">Merch</a>
   </nav>
@@ -549,9 +646,9 @@
     const fullscreenPrevBtn = document.getElementById('fullscreenPrevBtn');
     const fullscreenNextBtn = document.getElementById('fullscreenNextBtn');
     const fullscreenVolumeSlider = document.getElementById('fullscreenVolumeSlider');
+    const fullscreenYoutubeWrap = document.getElementById('fullscreenYoutubeWrap');
     const fullscreenYoutubeLink = document.getElementById('fullscreenYoutubeLink');
     const fullscreenBgArt = document.getElementById('fullscreenBgArt');
-    const zoomCardClone = document.getElementById('zoomCardClone');
     const miniPlayerMorphClone = document.getElementById('miniPlayerMorphClone');
     const realWaveform = document.getElementById('realWaveform');
 
@@ -574,7 +671,6 @@
     let isDraggingFullscreen = false;
     let dragStartY = 0;
     let currentDragY = 0;
-    let dragMoved = false;
     let wavesurfer = null;
     let syncingFromWaveform = false;
 
@@ -608,20 +704,14 @@
         wavesurfer.destroy();
         wavesurfer = null;
       }
-
-      if (realWaveform) {
-        realWaveform.innerHTML = '';
-      }
+      realWaveform.innerHTML = '';
     }
 
     function buildWaveformForCurrentTrack() {
       destroyWaveform();
-
       if (currentIndex === -1) return;
 
       const currentAudio = audios[currentIndex];
-      if (!currentAudio) return;
-
       const audioSrc = currentAudio.currentSrc || currentAudio.src;
       if (!audioSrc) return;
 
@@ -649,31 +739,19 @@
 
       wavesurfer.on('interaction', () => {
         if (!currentAudio.duration || !wavesurfer) return;
-
         syncingFromWaveform = true;
-        const waveformTime = wavesurfer.getCurrentTime();
-        currentAudio.currentTime = waveformTime;
-
-        if (currentAudio.paused) {
-          currentAudio.play();
-        }
-
-        setTimeout(() => {
-          syncingFromWaveform = false;
-        }, 0);
+        currentAudio.currentTime = wavesurfer.getCurrentTime();
+        if (currentAudio.paused) currentAudio.play();
+        setTimeout(() => syncingFromWaveform = false, 0);
       });
     }
 
     function syncWaveformWithAudio() {
       if (!wavesurfer || currentIndex === -1 || syncingFromWaveform) return;
-
       const currentAudio = audios[currentIndex];
-      if (!currentAudio || !currentAudio.duration) return;
-
+      if (!currentAudio.duration) return;
       const progress = currentAudio.currentTime / currentAudio.duration;
-      if (!Number.isNaN(progress)) {
-        wavesurfer.seekTo(progress);
-      }
+      if (!Number.isNaN(progress)) wavesurfer.seekTo(progress);
     }
 
     function resetVisuals() {
@@ -699,18 +777,13 @@
 
     function applyVolume(value) {
       const numericValue = Number(value);
-
-      audios.forEach(audio => {
-        audio.volume = numericValue;
-      });
-
+      audios.forEach(audio => audio.volume = numericValue);
       volumeSlider.value = numericValue;
       fullscreenVolumeSlider.value = numericValue;
     }
 
     function savePlayerState() {
       if (currentIndex === -1) return;
-
       const currentAudio = audios[currentIndex];
       localStorage.setItem('lr_current_index', String(currentIndex));
       localStorage.setItem('lr_current_time', String(currentAudio.currentTime || 0));
@@ -722,18 +795,15 @@
       const savedTime = localStorage.getItem('lr_current_time');
       const savedVolume = localStorage.getItem('lr_volume');
 
-      if (savedVolume !== null) {
-        applyVolume(savedVolume);
-      }
-
+      if (savedVolume !== null) applyVolume(savedVolume);
       if (savedIndex === null) return;
 
       const index = Number(savedIndex);
       if (Number.isNaN(index) || index < 0 || index >= audios.length) return;
 
       currentIndex = index;
-
       const coverSrc = cards[currentIndex].dataset.cover || cards[currentIndex].querySelector('img').src;
+
       miniTitle.textContent = cards[currentIndex].dataset.title;
       miniCover.src = coverSrc;
       fullscreenTitle.textContent = cards[currentIndex].dataset.title || 'Untitled';
@@ -741,10 +811,7 @@
       fullscreenCover.src = coverSrc;
       fullscreenBgArt.style.backgroundImage = `url('${coverSrc}')`;
 
-      if (savedTime !== null) {
-        audios[currentIndex].currentTime = Number(savedTime) || 0;
-      }
-
+      if (savedTime !== null) audios[currentIndex].currentTime = Number(savedTime) || 0;
       buildWaveformForCurrentTrack();
     }
 
@@ -756,6 +823,7 @@
         fullscreenCover.src = 'my-music-thumbnail.jpg';
         fullscreenBgArt.style.backgroundImage = "url('my-music-thumbnail.jpg')";
         fullscreenYoutubeLink.href = '#';
+        fullscreenYoutubeWrap.style.display = 'none';
         fullscreenPlayPauseBtn.textContent = '▶';
         fullscreenCurrentTime.textContent = '0:00';
         fullscreenDuration.textContent = '0:00';
@@ -772,10 +840,17 @@
       fullscreenArtist.textContent = currentCard.dataset.artist || 'LEGXCY REIGN';
       fullscreenCover.src = coverSrc;
       fullscreenBgArt.style.backgroundImage = `url('${coverSrc}')`;
-      fullscreenYoutubeLink.href = youtubeLink ? youtubeLink.href : '#';
       fullscreenPlayPauseBtn.textContent = currentAudio.paused ? '▶' : '⏸';
       fullscreenCurrentTime.textContent = formatTime(currentAudio.currentTime);
       fullscreenDuration.textContent = formatTime(currentAudio.duration);
+
+      if (youtubeLink && youtubeLink.href && youtubeLink.getAttribute('href') !== '#') {
+        fullscreenYoutubeLink.href = youtubeLink.href;
+        fullscreenYoutubeWrap.style.display = 'block';
+      } else {
+        fullscreenYoutubeLink.href = '#';
+        fullscreenYoutubeWrap.style.display = 'none';
+      }
 
       if (!isSeekingFullscreen && currentAudio.duration) {
         fullscreenSeekBar.value = (currentAudio.currentTime / currentAudio.duration) * 100;
@@ -801,14 +876,6 @@
       updateFullscreenMeta();
     }
 
-    function resetFullscreenDrag() {
-      fullscreenPlayerPanel.classList.remove('dragging');
-      fullscreenPlayerPanel.style.transform = '';
-      fullscreenPlayerPanel.style.opacity = '';
-      fullscreenBgArt.style.transform = '';
-      fullscreenBgArt.style.opacity = '';
-    }
-
     function clearMiniPlayerMorphClone() {
       miniPlayerMorphClone.innerHTML = '';
       miniPlayerMorphClone.className = '';
@@ -820,10 +887,7 @@
     function animateMiniPlayerMorph() {
       const miniRect = miniPlayer.getBoundingClientRect();
       const targetRect = fullscreenPlayerPanel.getBoundingClientRect();
-
-      if (!miniRect.width || !miniRect.height || !targetRect.width || !targetRect.height) {
-        return false;
-      }
+      if (!miniRect.width || !miniRect.height || !targetRect.width || !targetRect.height) return false;
 
       miniPlayer.classList.add('morphing');
       fullscreenPlayer.classList.add('morph-prep');
@@ -854,15 +918,11 @@
         miniPlayerMorphClone.style.borderRadius = '0px';
       });
 
-      setTimeout(() => {
-        clearMiniPlayerMorphClone();
-      }, 650);
-
+      setTimeout(clearMiniPlayerMorphClone, 650);
       return true;
     }
 
     function openFullscreenPlayer() {
-      resetFullscreenDrag();
       fullscreenPlayer.classList.remove('closing');
       fullscreenPlayer.classList.add('active');
       fullscreenPlayer.setAttribute('aria-hidden', 'false');
@@ -877,76 +937,12 @@
       fullscreenPlayer.classList.remove('active');
       fullscreenPlayer.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('fullscreen-open', 'cinematic-entering');
-
-      setTimeout(() => {
-        fullscreenPlayer.classList.remove('closing');
-        resetFullscreenDrag();
-      }, 320);
-    }
-
-    function startFullscreenDrag(clientY) {
-      if (!fullscreenPlayer.classList.contains('active')) return;
-      isDraggingFullscreen = true;
-      dragMoved = false;
-      dragStartY = clientY;
-      currentDragY = 0;
-      fullscreenPlayerPanel.classList.add('dragging');
-    }
-
-    function moveFullscreenDrag(clientY) {
-      if (!isDraggingFullscreen) return;
-
-      currentDragY = Math.max(0, clientY - dragStartY);
-
-      if (currentDragY > 4) {
-        dragMoved = true;
-      }
-
-      const moveAmount = currentDragY;
-      const fadeAmount = Math.max(0.35, 1 - moveAmount / 500);
-      const bgScale = 1.18 - Math.min(0.08, moveAmount / 2000);
-      const bgOpacity = Math.max(0.08, 0.24 - moveAmount / 1200);
-
-      fullscreenPlayerPanel.style.transform = `translateY(${moveAmount}px) scale(${Math.max(0.96, 1 - moveAmount / 3000)})`;
-      fullscreenPlayerPanel.style.opacity = fadeAmount;
-      fullscreenBgArt.style.transform = `scale(${bgScale})`;
-      fullscreenBgArt.style.opacity = bgOpacity;
-    }
-
-    function endFullscreenDrag() {
-      if (!isDraggingFullscreen) return;
-
-      isDraggingFullscreen = false;
-
-      if (currentDragY > 140) {
-        closeFullscreenPlayer();
-        resetFullscreenDrag();
-        return;
-      }
-
-      fullscreenPlayerPanel.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
-      fullscreenBgArt.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
-
-      requestAnimationFrame(() => {
-        fullscreenPlayerPanel.style.transform = '';
-        fullscreenPlayerPanel.style.opacity = '';
-        fullscreenBgArt.style.transform = '';
-        fullscreenBgArt.style.opacity = '';
-      });
-
-      setTimeout(() => {
-        fullscreenPlayerPanel.classList.remove('dragging');
-        fullscreenPlayerPanel.style.transition = '';
-        fullscreenBgArt.style.transition = '';
-        fullscreenBgArt.style.opacity = '';
-      }, 260);
+      setTimeout(() => fullscreenPlayer.classList.remove('closing'), 320);
     }
 
     function triggerTrackSwitchAnimation() {
       cards.forEach(c => c.classList.add('switching'));
-      setTimeout(() => {
-        cards.forEach(c => c.classList.remove('switching'));
-      }, 250);
+      setTimeout(() => cards.forEach(c => c.classList.remove('switching')), 250);
     }
 
     function playTrack(index) {
@@ -1012,14 +1008,10 @@
       document.body.classList.add('takeover-open', 'cinematic-entering', 'rain-active');
       cinematicTakeover.classList.add('active');
       cinematicTakeover.setAttribute('aria-hidden', 'false');
-
       takeoverVideo.currentTime = 0;
       takeoverVideo.muted = true;
       takeoverVideo.play().catch(() => {});
-
-      setTimeout(() => {
-        document.body.classList.remove('cinematic-entering');
-      }, 900);
+      setTimeout(() => document.body.classList.remove('cinematic-entering'), 900);
     }
 
     function closeTakeover() {
@@ -1046,7 +1038,6 @@
 
       card.addEventListener('click', () => {
         const sameTrackPlaying = currentIndex === index && !audio.paused;
-
         if (sameTrackPlaying) {
           audio.pause();
           card.classList.remove('playing');
@@ -1057,7 +1048,9 @@
         }
       });
 
-      yt.addEventListener('click', (e) => e.stopPropagation());
+      if (yt) {
+        yt.addEventListener('click', (e) => e.stopPropagation());
+      }
 
       audio.addEventListener('loadedmetadata', () => {
         if (currentIndex === index) updateFullscreenMeta();
@@ -1070,17 +1063,12 @@
 
           if (currentIndex === index) {
             miniProgressBar.style.width = percent + '%';
-
-            if (!isSeekingFullscreen) {
-              fullscreenSeekBar.value = percent;
-            }
-
+            if (!isSeekingFullscreen) fullscreenSeekBar.value = percent;
             fullscreenCurrentTime.textContent = formatTime(audio.currentTime);
             fullscreenDuration.textContent = formatTime(audio.duration);
             syncWaveformWithAudio();
           }
         }
-
         savePlayerState();
       });
 
@@ -1117,16 +1105,11 @@
         e.target.closest('#prevBtn') ||
         e.target.closest('#nextBtn') ||
         e.target.closest('#volumeSlider')
-      ) {
-        return;
-      }
+      ) return;
 
       document.body.classList.add('cinematic-entering');
       openFullscreenPlayer();
-
-      setTimeout(() => {
-        document.body.classList.remove('cinematic-entering');
-      }, 900);
+      setTimeout(() => document.body.classList.remove('cinematic-entering'), 900);
     });
 
     miniPlayer.addEventListener('keydown', (e) => {
@@ -1134,10 +1117,7 @@
         e.preventDefault();
         document.body.classList.add('cinematic-entering');
         openFullscreenPlayer();
-
-        setTimeout(() => {
-          document.body.classList.remove('cinematic-entering');
-        }, 900);
+        setTimeout(() => document.body.classList.remove('cinematic-entering'), 900);
       }
     });
 
@@ -1175,7 +1155,6 @@
       if (currentIndex === -1) return;
       const audio = audios[currentIndex];
       if (!audio.duration) return;
-
       isSeekingFullscreen = true;
       const seekTime = (fullscreenSeekBar.value / 100) * audio.duration;
       fullscreenCurrentTime.textContent = formatTime(seekTime);
@@ -1185,9 +1164,7 @@
       if (currentIndex === -1) return;
       const audio = audios[currentIndex];
       if (!audio.duration) return;
-
-      const seekTime = (fullscreenSeekBar.value / 100) * audio.duration;
-      audio.currentTime = seekTime;
+      audio.currentTime = (fullscreenSeekBar.value / 100) * audio.duration;
       isSeekingFullscreen = false;
       updateFullscreenMeta();
       syncWaveformWithAudio();
@@ -1203,48 +1180,6 @@
       e.stopPropagation();
       closeFullscreenPlayer();
     });
-
-    fullscreenPlayerPanel.addEventListener('click', (e) => e.stopPropagation());
-
-    fullscreenPlayerPanel.addEventListener('mousedown', (e) => {
-      if (
-        e.target.closest('#fullscreenSeekBar') ||
-        e.target.closest('#fullscreenVolumeSlider') ||
-        e.target.closest('#fullscreenPlayPauseBtn') ||
-        e.target.closest('#fullscreenPrevBtn') ||
-        e.target.closest('#fullscreenNextBtn') ||
-        e.target.closest('#closeFullscreenPlayer') ||
-        e.target.closest('#fullscreenYoutubeLink') ||
-        e.target.closest('#realWaveform')
-      ) return;
-
-      startFullscreenDrag(e.clientY);
-    });
-
-    document.addEventListener('mousemove', (e) => moveFullscreenDrag(e.clientY));
-    document.addEventListener('mouseup', () => endFullscreenDrag());
-
-    fullscreenPlayerPanel.addEventListener('touchstart', (e) => {
-      if (
-        e.target.closest('#fullscreenSeekBar') ||
-        e.target.closest('#fullscreenVolumeSlider') ||
-        e.target.closest('#fullscreenPlayPauseBtn') ||
-        e.target.closest('#fullscreenPrevBtn') ||
-        e.target.closest('#fullscreenNextBtn') ||
-        e.target.closest('#closeFullscreenPlayer') ||
-        e.target.closest('#fullscreenYoutubeLink') ||
-        e.target.closest('#realWaveform')
-      ) return;
-
-      startFullscreenDrag(e.touches[0].clientY);
-    }, { passive: true });
-
-    document.addEventListener('touchmove', (e) => {
-      if (!isDraggingFullscreen) return;
-      moveFullscreenDrag(e.touches[0].clientY);
-    }, { passive: true });
-
-    document.addEventListener('touchend', () => endFullscreenDrag());
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -1281,44 +1216,31 @@
 
       albumCoverBlock.addEventListener('mousemove', (e) => {
         const rect = albumCoverBlock.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const xRatio = (x / rect.width - 0.5) * 2;
-        const yRatio = (y / rect.height - 0.5) * 2;
+        const xRatio = (e.clientX - rect.left) / rect.width * 2 - 1;
+        const yRatio = (e.clientY - rect.top) / rect.height * 2 - 1;
 
         albumCoverBlock.classList.add('parallax-active');
-
         if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(() => {
-          setCoverTransform(xRatio, yRatio);
-        });
+        rafId = requestAnimationFrame(() => setCoverTransform(xRatio, yRatio));
       });
 
-      albumCoverBlock.addEventListener('mouseleave', () => {
-        resetCoverTransform();
-      });
+      albumCoverBlock.addEventListener('mouseleave', resetCoverTransform);
     }
 
     if (emailCaptureForm) {
       const savedEmail = localStorage.getItem('lr_saved_email');
-      if (savedEmail) {
-        emailCaptureInput.value = savedEmail;
-      }
+      if (savedEmail) emailCaptureInput.value = savedEmail;
 
-      emailCaptureForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
+      emailCaptureForm.addEventListener('submit', () => {
         const value = emailCaptureInput.value.trim();
         const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
-        if (!isValid) {
+        if (isValid) {
+          localStorage.setItem('lr_saved_email', value);
+          emailCaptureMessage.textContent = 'Opening secure signup...';
+        } else {
           emailCaptureMessage.textContent = 'Enter a valid email first.';
-          return;
         }
-
-        localStorage.setItem('lr_saved_email', value);
-        emailCaptureMessage.textContent = 'You’re locked in for future drops.';
       });
     }
 
