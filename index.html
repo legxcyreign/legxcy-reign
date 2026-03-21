@@ -1,146 +1,1320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LEGXCY REIGN | Official Music Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGXCY REIGN</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="site-loading">
 
-  <!-- HERO SECTION -->
+  <!-- INTRO SCREEN -->
+  <div id="introScreen">
+    <div class="intro-logo-wrap">
+      <h1 class="intro-logo">LEGXCY REIGN</h1>
+      <p class="intro-tag">Welcome to my world</p>
+    </div>
+  </div>
+
+  <!-- HERO -->
   <section class="hero">
+    <img src="my-hero-photo.jpg" class="hero-img" alt="LEGXCY REIGN" />
     <canvas id="heroCanvas"></canvas>
-    <div class="hero-overlay"></div>
-    <h1 class="hero-title">LEGXCY REIGN</h1>
-    <p class="hero-subtitle">Official Music Website</p>
+
+    <div class="hero-text intro-fade">
+      <h1>LEGXCY REIGN</h1>
+      <p>Welcome to my world</p>
+    </div>
   </section>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <a href="#home" class="nav-link">Home</a>
-    <a href="#music" class="nav-link">Music</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="#merch" class="nav-link">Merch</a>
-  </nav>
-
-  <!-- MUSIC SECTION -->
-  <section id="music" class="music-section">
-    <h2 class="section-title">Music</h2>
-
-    <!-- Song 1: Let Me See Ft Malo -->
-    <div class="song-card" onclick="window.open('https://youtu.be/684Ml1y9FPw?si=6BLAWzvmXuWGS8kD', '_blank')">
-      <img src="my-music-thumbnail.jpg" alt="Let Me See Ft Malo" class="song-thumb">
-      <div class="song-info">
-        <span>Let Me See Ft Malo</span>
-        <span class="play-icon">▶️</span>
-      </div>
-    </div>
-
-    <!-- Song 2: Da Houss On Dekalb -->
-    <div class="song-card" onclick="window.open('https://youtu.be/lYdlfkrb-Xw?si=rDqTeyodHGZSRkWK', '_blank')">
-      <img src="my-second-thumbnail.jpg" alt="Da Houss On Dekalb" class="song-thumb">
-      <div class="song-info">
-        <span>Da Houss On Dekalb</span>
-        <span class="play-icon">▶️</span>
-      </div>
-    </div>
-
-    <!-- Song 3: Lose Your Mind -->
-    <div class="song-card" onclick="window.open('https://youtu.be/OiIaspEQGcY?si=jyUhlmSKOVwInsPT', '_blank')">
-      <img src="my-third-thumbnail.jpg" alt="Lose Your Mind" class="song-thumb">
-      <div class="song-info">
-        <span>Lose Your Mind</span>
-        <span class="play-icon">▶️</span>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section id="about" class="about-section">
-    <h2 class="section-title">About LEGXCY REIGN</h2>
+  <!-- ABOUT -->
+  <section id="about" class="intro-fade delay-1">
+    <h2>About</h2>
     <p>
-      LEGXCY REIGN is the official music project showcasing hits, visuals, and exclusive tracks. 
-      Stay tuned for new releases and merch drops.
+      LEGXCY REIGN is more than music — it's a story, a lifestyle, and a legacy in the making.
+      Every track represents real experiences, growth, and elevation. This isn’t just sound… this is a vision.
     </p>
   </section>
 
-  <!-- MERCH SECTION -->
-  <section id="merch" class="merch-section">
-    <!-- Placeholder merch cards -->
-    <div class="merch-card">
-      <div class="merch-inner">
-        <img src="placeholder.jpg" alt="Coming Soon">
-        <p>LEGXCY REIGN Merch</p>
-      </div>
-    </div>
-    <div class="merch-card">
-      <div class="merch-inner">
-        <img src="placeholder.jpg" alt="Coming Soon">
-        <p>LEGXCY REIGN Merch</p>
-      </div>
-    </div>
-    <div class="merch-card">
-      <div class="merch-inner">
-        <img src="placeholder.jpg" alt="Coming Soon">
-        <p>LEGXCY REIGN Merch</p>
+  <!-- CINEMATIC FEATURED VIDEO -->
+  <section class="featured-video cinematic-section intro-fade delay-2">
+    <div class="cinematic-overlay"></div>
+
+    <div class="cinematic-content">
+      <span class="cinematic-kicker">FEATURED DROP</span>
+      <h2>Da Houss On Dekalb</h2>
+      <p class="featured-caption">Tap the teaser to enter a 12-second cinematic takeover</p>
+
+      <button class="video-trigger-wrap" id="takeoverTrigger" type="button" aria-label="Open cinematic takeover">
+        <div class="video-container cinematic-frame">
+          <video id="featuredPreviewVideo" preload="metadata" playsinline muted poster="my-second-thumbnail.jpg">
+            <source src="dekalb-teaser.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="video-trigger-overlay">
+            <span class="video-trigger-badge">▶ Cinematic Moment</span>
+          </div>
+        </div>
+      </button>
+
+      <div class="waveform featured-waveform" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
       </div>
     </div>
   </section>
 
-  <!-- PARTICLES SCRIPT -->
+  <!-- ALBUM MODE -->
+  <section id="music" class="album-section intro-fade delay-2">
+    <div class="album-shell">
+      <div class="album-cover-block">
+        <img src="album-cover.jpg" alt="When It Reign It Pours album cover" class="album-cover-art" />
+      </div>
+
+      <div class="album-meta-block">
+        <span class="album-kicker">ALBUM IN PROGRESS</span>
+        <h2 class="album-title">When It Reign It Pours</h2>
+        <p class="album-artist">LEGXCY REIGN</p>
+        <p class="album-status">3 / ? Tracks Released</p>
+      </div>
+
+      <div class="album-tracklist">
+
+        <div class="album-track music-card"
+             data-index="0"
+             data-title="Let Me See ft Malo"
+             data-artist="LEGXCY REIGN"
+             data-cover="my-music-thumbnail.jpg">
+          <div class="album-track-left">
+            <span class="album-track-number">01</span>
+            <img src="my-music-thumbnail.jpg" alt="Let Me See ft Malo" class="album-track-thumb" />
+            <div class="album-track-text">
+              <h4>Let Me See ft Malo</h4>
+              <p>Released</p>
+            </div>
+          </div>
+
+          <div class="album-track-right">
+            <audio src="let-me-see-preview.mp3"></audio>
+            <div class="progress-track"><div class="progress-bar"></div></div>
+            <a class="yt-link" href="https://youtu.be/684Ml1y9FPw?si=6BLAWzvmXuWGS8kD" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+          </div>
+        </div>
+
+        <div class="album-track music-card"
+             data-index="1"
+             data-title="Da Houss On Dekalb"
+             data-artist="LEGXCY REIGN"
+             data-cover="my-second-thumbnail.jpg">
+          <div class="album-track-left">
+            <span class="album-track-number">02</span>
+            <img src="my-second-thumbnail.jpg" alt="Da Houss On Dekalb" class="album-track-thumb" />
+            <div class="album-track-text">
+              <h4>Da Houss On Dekalb</h4>
+              <p>Released</p>
+            </div>
+          </div>
+
+          <div class="album-track-right">
+            <audio src="da-houss-preview.mp3"></audio>
+            <div class="progress-track"><div class="progress-bar"></div></div>
+            <a class="yt-link" href="https://youtu.be/lYdlfkrb-Xw?si=rDqTeyodHGZSRkWK" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+          </div>
+        </div>
+
+        <div class="album-track music-card"
+             data-index="2"
+             data-title="Lose Your Mind"
+             data-artist="LEGXCY REIGN"
+             data-cover="my-third-thumbnail.jpg">
+          <div class="album-track-left">
+            <span class="album-track-number">03</span>
+            <img src="my-third-thumbnail.jpg" alt="Lose Your Mind" class="album-track-thumb" />
+            <div class="album-track-text">
+              <h4>Lose Your Mind</h4>
+              <p>Released</p>
+            </div>
+          </div>
+
+          <div class="album-track-right">
+            <audio src="lose-your-mind-preview.mp3"></audio>
+            <div class="progress-track"><div class="progress-bar"></div></div>
+            <a class="yt-link" href="https://youtu.be/OiIaspEQGcY?si=jyUhlmSKOVwInsPT" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+          </div>
+        </div>
+
+        <div class="album-track locked-track new-drop-track">
+          <div class="album-track-left">
+            <span class="album-track-number">04</span>
+            <div class="album-track-thumb locked-thumb">🔒</div>
+            <div class="album-track-text">
+              <h4>???</h4>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+          <div class="album-track-right">
+            <span class="locked-label">Locked</span>
+          </div>
+        </div>
+
+        <div class="album-track locked-track">
+          <div class="album-track-left">
+            <span class="album-track-number">05</span>
+            <div class="album-track-thumb locked-thumb">🔒</div>
+            <div class="album-track-text">
+              <h4>???</h4>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+          <div class="album-track-right">
+            <span class="locked-label">Locked</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TAP IN EVERYWHERE -->
+  <section id="links" class="links-section intro-fade delay-2">
+    <div class="links-shell">
+      <span class="links-kicker">TAP IN EVERYWHERE</span>
+      <h2>Stay connected with LEGXCY REIGN</h2>
+      <p>Music, visuals, updates, and more across every platform.</p>
+
+      <div class="links-grid">
+        <a class="social-card" href="https://www.tiktok.com/@legxcy_reign_tv?_r=1&_t=ZP-94rcZ2D5t0Q" target="_blank" rel="noopener noreferrer">
+          <span class="social-card-label">TikTok</span>
+          <span class="social-card-handle">@legxcy_reign_tv</span>
+        </a>
+
+        <a class="social-card" href="https://youtube.com/@legxcyreign_tv?si=gs33ToEgilWwqmiA" target="_blank" rel="noopener noreferrer">
+          <span class="social-card-label">YouTube</span>
+          <span class="social-card-handle">@legxcyreign_tv</span>
+        </a>
+
+        <a class="social-card" href="https://youtube.com/@legxcyvsthemachine?si=GhPbi6SGL9Rl-EgZ" target="_blank" rel="noopener noreferrer">
+          <span class="social-card-label">YouTube 2</span>
+          <span class="social-card-handle">@legxcyvsthemachine</span>
+        </a>
+
+        <a class="social-card" href="https://www.instagram.com/legxcyreign_tv?igsh=MXhibGEzMXJ5bjRxNg==" target="_blank" rel="noopener noreferrer">
+          <span class="social-card-label">Instagram</span>
+          <span class="social-card-handle">@legxcyreign_tv</span>
+        </a>
+
+        <a class="social-card" href="https://www.facebook.com/share/1DtYabVtZL/" target="_blank" rel="noopener noreferrer">
+          <span class="social-card-label">Facebook</span>
+          <span class="social-card-handle">LEGXCY REIGN</span>
+        </a>
+
+        <a class="social-card email-card" href="mailto:LegxcyReign@gmail.com">
+          <span class="social-card-label">Business Email</span>
+          <span class="social-card-handle">LegxcyReign@gmail.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GHOSTWRITING -->
+  <section id="ghostwriting" class="service-section intro-fade delay-3">
+    <div class="service-shell">
+      <span class="service-kicker">GHOSTWRITING</span>
+      <h2>Need a writer with real emotion, structure, and replay value?</h2>
+      <p>
+        LEGXCY REIGN offers ghostwriting for artists who want powerful hooks, real storytelling, and records that actually connect.
+        For serious inquiries, email directly or tap in on Instagram.
+      </p>
+
+      <div class="service-actions">
+        <a class="service-button" href="mailto:LegxcyReign@gmail.com">Email for business</a>
+        <a class="service-button secondary" href="https://www.instagram.com/legxcyreign_tv?igsh=MXhibGEzMXJ5bjRxNg==" target="_blank" rel="noopener noreferrer">DM on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KID REIGN -->
+  <section id="kid-reign" class="service-section kid-reign-section intro-fade delay-3">
+    <div class="service-shell">
+      <span class="service-kicker">KID REIGN</span>
+      <h2>Music for kids is coming too.</h2>
+      <p>
+        Kid Reign is a future lane for fun, positive, creative music made especially for children — built with heart, imagination, and good energy.
+      </p>
+    </div>
+  </section>
+
+  <!-- MERCH -->
+  <section id="merch" class="intro-fade delay-3">
+    <h2>Merch</h2>
+
+    <div class="merch-grid">
+      <div class="merch-flip-wrap">
+        <div class="merch-flip-card">
+          <div class="merch-face merch-front">
+            <img src="placeholder.jpg" alt="Merch Front" class="merch-item" />
+          </div>
+          <div class="merch-face merch-back">
+            <img src="placeholder-back.jpg" alt="Merch Back" class="merch-item" />
+          </div>
+        </div>
+        <p class="merch-label">Signature Piece</p>
+      </div>
+
+      <div class="merch-card merch-coming-soon">
+        <div class="merch-coming-inner">
+          <span>Drop 02</span>
+          <strong>Coming Soon</strong>
+        </div>
+      </div>
+
+      <div class="merch-card merch-coming-soon">
+        <div class="merch-coming-inner">
+          <span>Drop 03</span>
+          <strong>Coming Soon</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL / STAY LOCKED IN -->
+  <section id="connect" class="connect-section intro-fade delay-3">
+    <div class="connect-shell">
+      <span class="connect-kicker">STAY LOCKED IN</span>
+      <h2>Get updates on new drops</h2>
+      <p>New music. New visuals. New merch. Be first when it lands.</p>
+
+      <form id="emailCaptureForm" class="connect-form">
+        <input
+          type="email"
+          id="emailCaptureInput"
+          class="connect-input"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        />
+        <button type="submit" class="connect-button">Tap In</button>
+      </form>
+
+      <p id="emailCaptureMessage" class="connect-message" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- MINI PLAYER -->
+  <div class="mini-player" id="miniPlayer" role="button" tabindex="0" aria-label="Open fullscreen player">
+    <div class="mini-player-top">
+      <div class="mini-title-wrap">
+        <div class="mini-title" id="miniTitle">No song playing</div>
+        <div class="mini-hint">Tap for fullscreen</div>
+      </div>
+
+      <div class="mini-controls">
+        <button id="prevBtn" aria-label="Previous" type="button">⏮</button>
+        <button id="playPauseBtn" aria-label="Play or Pause" type="button">▶</button>
+        <button id="nextBtn" aria-label="Next" type="button">⏭</button>
+      </div>
+    </div>
+
+    <div class="mini-progress-track" id="miniProgressTrack">
+      <div class="mini-progress-bar" id="miniProgressBar"></div>
+    </div>
+
+    <div class="mini-volume-row">
+      <span class="volume-icon">🔊</span>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
+    </div>
+
+    <div class="waveform mini-waveform" id="miniWaveform" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- CLONES -->
+  <div id="zoomCardClone" aria-hidden="true"></div>
+  <div id="miniPlayerMorphClone" aria-hidden="true"></div>
+
+  <!-- FULLSCREEN PLAYER -->
+  <div class="fullscreen-player" id="fullscreenPlayer" aria-hidden="true">
+    <div class="fullscreen-player-backdrop" id="closeFullscreenBackdrop"></div>
+
+    <div class="fullscreen-player-panel" id="fullscreenPlayerPanel">
+      <div class="fullscreen-bg-art" id="fullscreenBgArt"></div>
+
+      <button
+        class="fullscreen-close"
+        id="closeFullscreenPlayer"
+        aria-label="Close fullscreen player"
+        type="button"
+      >
+        ✕
+      </button>
+
+      <div class="fullscreen-top">
+        <p class="fullscreen-kicker">NOW PLAYING</p>
+      </div>
+
+      <div class="fullscreen-cover-wrap">
+        <img
+          id="fullscreenCover"
+          src="my-music-thumbnail.jpg"
+          alt="Current track cover"
+          class="fullscreen-cover"
+        />
+      </div>
+
+      <div class="fullscreen-meta">
+        <h2 id="fullscreenTitle">No song playing</h2>
+        <p id="fullscreenArtist">LEGXCY REIGN</p>
+      </div>
+
+      <div class="fullscreen-waveform-wrap">
+        <div id="realWaveform" class="real-waveform"></div>
+      </div>
+
+      <div class="fullscreen-progress-wrap">
+        <div class="fullscreen-time-row">
+          <span id="fullscreenCurrentTime">0:00</span>
+          <span id="fullscreenDuration">0:00</span>
+        </div>
+
+        <input type="range" id="fullscreenSeekBar" min="0" max="100" step="0.1" value="0" />
+      </div>
+
+      <div class="fullscreen-controls">
+        <button id="fullscreenPrevBtn" aria-label="Previous" type="button">⏮</button>
+        <button id="fullscreenPlayPauseBtn" aria-label="Play or Pause" type="button">▶</button>
+        <button id="fullscreenNextBtn" aria-label="Next" type="button">⏭</button>
+      </div>
+
+      <div class="fullscreen-volume-row">
+        <span>🔊</span>
+        <input type="range" id="fullscreenVolumeSlider" min="0" max="1" step="0.01" value="1" />
+      </div>
+
+      <div class="fullscreen-youtube-wrap">
+        <a id="fullscreenYoutubeLink" href="#" target="_blank" rel="noopener noreferrer">▶ Open on YouTube</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CINEMATIC TAKEOVER -->
+  <div class="cinematic-takeover" id="cinematicTakeover" aria-hidden="true">
+    <div class="cinematic-takeover-backdrop" id="closeTakeoverBackdrop"></div>
+
+    <div class="cinematic-takeover-shell">
+      <button class="cinematic-takeover-close" id="closeTakeoverBtn" type="button" aria-label="Close cinematic takeover">✕</button>
+
+      <div class="cinematic-takeover-frame">
+        <video id="takeoverVideo" playsinline preload="metadata" muted poster="my-second-thumbnail.jpg">
+          <source src="dekalb-teaser.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <p class="cinematic-takeover-caption">Da Houss On Dekalb — cinematic moment</p>
+    </div>
+  </div>
+
+  <!-- BOTTOM TABS -->
+  <nav class="bottom-tabs">
+    <a href="#about">About</a>
+    <a href="#music">Album</a>
+    <a href="#links">Links</a>
+    <a href="#merch">Merch</a>
+  </nav>
+
   <script>
-    const canvas = document.getElementById('heroCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = [];
-    const particleCount = 50;
-
-    function Particle() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 3 + 1;
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.speedY = (Math.random() - 0.5) * 0.5;
-      this.color = 'rgba(255, 0, 85, 0.7)';
-    }
-
-    Particle.prototype.update = function() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-    }
-
-    Particle.prototype.draw = function() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
-      ctx.fillStyle = this.color;
-      ctx.fill();
-    }
-
-    for(let i=0;i<particleCount;i++){
-      particles.push(new Particle());
-    }
-
-    function animate(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      particles.forEach(p=>{
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-    window.addEventListener('resize', ()=>{
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.body.classList.remove('site-loading');
+        document.body.classList.add('site-loaded');
+      }, 1700);
     });
   </script>
 
+  <script>
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      const hero = document.querySelector('.hero');
+      canvas.width = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('load', resizeCanvas);
+
+    const symbols = ['♪', '♫', '🎤'];
+    const colors = ['#00A1FF', '#FF0000', '#FFD700', '#00FF00', '#FF00FF'];
+    const particles = [];
+
+    function createParticles() {
+      particles.length = 0;
+      for (let i = 0; i < 25; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 18 + 10,
+          speed: Math.random() * 0.3 + 0.1,
+          char: symbols[Math.floor(Math.random() * symbols.length)],
+          color: colors[Math.floor(Math.random() * colors.length)]
+        });
+      }
+    }
+
+    window.addEventListener('load', createParticles);
+    window.addEventListener('resize', createParticles);
+
+    function animateHero() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(p => {
+        p.y -= p.speed;
+        if (p.y < -20) {
+          p.y = canvas.height + 20;
+          p.x = Math.random() * canvas.width;
+        }
+
+        ctx.fillStyle = p.color;
+        ctx.font = p.size + 'px Arial';
+        ctx.fillText(p.char, p.x, p.y);
+      });
+
+      requestAnimationFrame(animateHero);
+    }
+
+    animateHero();
+  </script>
+
+  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+
+  <script>
+    const cards = Array.from(document.querySelectorAll('.music-card'));
+    const audios = cards.map(card => card.querySelector('audio'));
+
+    const miniPlayer = document.getElementById('miniPlayer');
+    const miniTitle = document.getElementById('miniTitle');
+    const miniProgressBar = document.getElementById('miniProgressBar');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const miniWaveform = document.getElementById('miniWaveform');
+    const featuredWaveform = document.querySelector('.featured-waveform');
+
+    const fullscreenPlayer = document.getElementById('fullscreenPlayer');
+    const fullscreenPlayerPanel = document.getElementById('fullscreenPlayerPanel');
+    const closeFullscreenPlayerBtn = document.getElementById('closeFullscreenPlayer');
+    const closeFullscreenBackdrop = document.getElementById('closeFullscreenBackdrop');
+    const fullscreenCover = document.getElementById('fullscreenCover');
+    const fullscreenTitle = document.getElementById('fullscreenTitle');
+    const fullscreenArtist = document.getElementById('fullscreenArtist');
+    const fullscreenCurrentTime = document.getElementById('fullscreenCurrentTime');
+    const fullscreenDuration = document.getElementById('fullscreenDuration');
+    const fullscreenSeekBar = document.getElementById('fullscreenSeekBar');
+    const fullscreenPlayPauseBtn = document.getElementById('fullscreenPlayPauseBtn');
+    const fullscreenPrevBtn = document.getElementById('fullscreenPrevBtn');
+    const fullscreenNextBtn = document.getElementById('fullscreenNextBtn');
+    const fullscreenVolumeSlider = document.getElementById('fullscreenVolumeSlider');
+    const fullscreenYoutubeLink = document.getElementById('fullscreenYoutubeLink');
+    const fullscreenBgArt = document.getElementById('fullscreenBgArt');
+    const zoomCardClone = document.getElementById('zoomCardClone');
+    const miniPlayerMorphClone = document.getElementById('miniPlayerMorphClone');
+    const realWaveform = document.getElementById('realWaveform');
+
+    const albumCoverBlock = document.querySelector('.album-cover-block');
+    const albumCoverArt = document.querySelector('.album-cover-art');
+
+    const emailCaptureForm = document.getElementById('emailCaptureForm');
+    const emailCaptureInput = document.getElementById('emailCaptureInput');
+    const emailCaptureMessage = document.getElementById('emailCaptureMessage');
+
+    const takeoverTrigger = document.getElementById('takeoverTrigger');
+    const featuredPreviewVideo = document.getElementById('featuredPreviewVideo');
+    const cinematicTakeover = document.getElementById('cinematicTakeover');
+    const takeoverVideo = document.getElementById('takeoverVideo');
+    const closeTakeoverBtn = document.getElementById('closeTakeoverBtn');
+    const closeTakeoverBackdrop = document.getElementById('closeTakeoverBackdrop');
+
+    let currentIndex = -1;
+    let isSeekingFullscreen = false;
+    let isDraggingFullscreen = false;
+    let dragStartY = 0;
+    let currentDragY = 0;
+    let dragMoved = false;
+    let wavesurfer = null;
+    let syncingFromWaveform = false;
+
+    function buzz(ms = 18) {
+      if (navigator.vibrate) navigator.vibrate(ms);
+    }
+
+    function formatTime(seconds) {
+      if (!isFinite(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return mins + ':' + String(secs).padStart(2, '0');
+    }
+
+    function setWaveformsPlaying(isPlaying) {
+      if (isPlaying) {
+        miniWaveform.classList.add('playing');
+        featuredWaveform.classList.add('playing');
+        document.body.classList.add('music-reactive', 'glow-active', 'cinematic-active', 'rain-active');
+      } else {
+        miniWaveform.classList.remove('playing');
+        featuredWaveform.classList.remove('playing');
+        document.body.classList.remove('glow-active');
+
+        setTimeout(() => {
+          if (audios.every(a => a.paused)) {
+            document.body.classList.remove('music-reactive', 'cinematic-active', 'rain-active');
+          }
+        }, 300);
+      }
+    }
+
+    function destroyWaveform() {
+      if (wavesurfer) {
+        wavesurfer.destroy();
+        wavesurfer = null;
+      }
+
+      if (realWaveform) {
+        realWaveform.innerHTML = '';
+      }
+    }
+
+    function buildWaveformForCurrentTrack() {
+      destroyWaveform();
+
+      if (currentIndex === -1) return;
+
+      const currentAudio = audios[currentIndex];
+      if (!currentAudio) return;
+
+      const audioSrc = currentAudio.currentSrc || currentAudio.src;
+      if (!audioSrc) return;
+
+      wavesurfer = WaveSurfer.create({
+        container: realWaveform,
+        url: audioSrc,
+        waveColor: '#ff4d8d',
+        progressColor: '#00a1ff',
+        height: 84,
+        barWidth: 3,
+        barGap: 2,
+        barRadius: 999,
+        cursorWidth: 0,
+        normalize: true,
+        dragToSeek: true,
+        interact: true
+      });
+
+      wavesurfer.on('ready', () => {
+        if (currentAudio.duration) {
+          const progress = currentAudio.currentTime / currentAudio.duration;
+          wavesurfer.seekTo(progress || 0);
+        }
+      });
+
+      wavesurfer.on('interaction', () => {
+        if (!currentAudio.duration || !wavesurfer) return;
+
+        syncingFromWaveform = true;
+        const waveformTime = wavesurfer.getCurrentTime();
+        currentAudio.currentTime = waveformTime;
+
+        if (currentAudio.paused) {
+          currentAudio.play();
+        }
+
+        setTimeout(() => {
+          syncingFromWaveform = false;
+        }, 0);
+      });
+    }
+
+    function syncWaveformWithAudio() {
+      if (!wavesurfer || currentIndex === -1 || syncingFromWaveform) return;
+
+      const currentAudio = audios[currentIndex];
+      if (!currentAudio || !currentAudio.duration) return;
+
+      const progress = currentAudio.currentTime / currentAudio.duration;
+      if (!Number.isNaN(progress)) {
+        wavesurfer.seekTo(progress);
+      }
+    }
+
+    function resetVisuals() {
+      cards.forEach(card => {
+        card.classList.remove('playing');
+        card.classList.remove('switching');
+        card.querySelector('.progress-bar').style.width = '0%';
+      });
+
+      miniProgressBar.style.width = '0%';
+      fullscreenSeekBar.value = 0;
+      fullscreenCurrentTime.textContent = '0:00';
+      fullscreenDuration.textContent = '0:00';
+      setWaveformsPlaying(false);
+    }
+
+    function stopAllAudio() {
+      audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    }
+
+    function applyVolume(value) {
+      const numericValue = Number(value);
+
+      audios.forEach(audio => {
+        audio.volume = numericValue;
+      });
+
+      volumeSlider.value = numericValue;
+      fullscreenVolumeSlider.value = numericValue;
+    }
+
+    function savePlayerState() {
+      if (currentIndex === -1) return;
+
+      const currentAudio = audios[currentIndex];
+
+      localStorage.setItem('lr_current_index', String(currentIndex));
+      localStorage.setItem('lr_current_time', String(currentAudio.currentTime || 0));
+      localStorage.setItem('lr_volume', String(currentAudio.volume ?? 1));
+    }
+
+    function restorePlayerState() {
+      const savedIndex = localStorage.getItem('lr_current_index');
+      const savedTime = localStorage.getItem('lr_current_time');
+      const savedVolume = localStorage.getItem('lr_volume');
+
+      if (savedVolume !== null) {
+        applyVolume(savedVolume);
+      }
+
+      if (savedIndex === null) return;
+
+      const index = Number(savedIndex);
+      if (Number.isNaN(index) || index < 0 || index >= audios.length) return;
+
+      currentIndex = index;
+
+      const coverSrc = cards[currentIndex].dataset.cover || cards[currentIndex].querySelector('img').src;
+      miniTitle.textContent = cards[currentIndex].dataset.title;
+      fullscreenTitle.textContent = cards[currentIndex].dataset.title || 'Untitled';
+      fullscreenArtist.textContent = cards[currentIndex].dataset.artist || 'LEGXCY REIGN';
+      fullscreenCover.src = coverSrc;
+      fullscreenBgArt.style.backgroundImage = `url('${coverSrc}')`;
+
+      if (savedTime !== null) {
+        audios[currentIndex].currentTime = Number(savedTime) || 0;
+      }
+
+      buildWaveformForCurrentTrack();
+    }
+
+    function updateFullscreenMeta() {
+      if (currentIndex === -1) {
+        destroyWaveform();
+        fullscreenTitle.textContent = 'No song playing';
+        fullscreenArtist.textContent = 'LEGXCY REIGN';
+        fullscreenCover.src = 'my-music-thumbnail.jpg';
+        fullscreenBgArt.style.backgroundImage = "url('my-music-thumbnail.jpg')";
+        fullscreenYoutubeLink.href = '#';
+        fullscreenPlayPauseBtn.textContent = '▶';
+        fullscreenCurrentTime.textContent = '0:00';
+        fullscreenDuration.textContent = '0:00';
+        fullscreenSeekBar.value = 0;
+        return;
+      }
+
+      const currentCard = cards[currentIndex];
+      const currentAudio = audios[currentIndex];
+      const youtubeLink = currentCard.querySelector('.yt-link');
+      const coverSrc = currentCard.dataset.cover || currentCard.querySelector('img').src;
+
+      fullscreenTitle.textContent = currentCard.dataset.title || 'Untitled';
+      fullscreenArtist.textContent = currentCard.dataset.artist || 'LEGXCY REIGN';
+      fullscreenCover.src = coverSrc;
+      fullscreenBgArt.style.backgroundImage = `url('${coverSrc}')`;
+      fullscreenYoutubeLink.href = youtubeLink ? youtubeLink.href : '#';
+      fullscreenPlayPauseBtn.textContent = currentAudio.paused ? '▶' : '⏸';
+      fullscreenCurrentTime.textContent = formatTime(currentAudio.currentTime);
+      fullscreenDuration.textContent = formatTime(currentAudio.duration);
+
+      if (!isSeekingFullscreen && currentAudio.duration) {
+        fullscreenSeekBar.value = (currentAudio.currentTime / currentAudio.duration) * 100;
+      }
+    }
+
+    function updateMiniPlayer() {
+      if (currentIndex === -1) {
+        miniTitle.textContent = 'No song playing';
+        playPauseBtn.textContent = '▶';
+        miniProgressBar.style.width = '0%';
+        setWaveformsPlaying(false);
+        updateFullscreenMeta();
+        return;
+      }
+
+      miniTitle.textContent = cards[currentIndex].dataset.title;
+      playPauseBtn.textContent = audios[currentIndex].paused ? '▶' : '⏸';
+      setWaveformsPlaying(!audios[currentIndex].paused);
+      updateFullscreenMeta();
+    }
+
+    function resetFullscreenDrag() {
+      fullscreenPlayerPanel.classList.remove('dragging');
+      fullscreenPlayerPanel.style.transform = '';
+      fullscreenPlayerPanel.style.opacity = '';
+      fullscreenBgArt.style.transform = '';
+      fullscreenBgArt.style.opacity = '';
+    }
+
+    function clearZoomClone() {
+      zoomCardClone.innerHTML = '';
+      zoomCardClone.className = '';
+      zoomCardClone.style.cssText = '';
+    }
+
+    function clearMiniPlayerMorphClone() {
+      miniPlayerMorphClone.innerHTML = '';
+      miniPlayerMorphClone.className = '';
+      miniPlayerMorphClone.style.cssText = '';
+      miniPlayer.classList.remove('morphing');
+      fullscreenPlayer.classList.remove('morph-prep');
+    }
+
+    function animateMiniPlayerMorph() {
+      const miniRect = miniPlayer.getBoundingClientRect();
+      const targetRect = fullscreenPlayerPanel.getBoundingClientRect();
+
+      if (!miniRect.width || !miniRect.height || !targetRect.width || !targetRect.height) {
+        return false;
+      }
+
+      miniPlayer.classList.add('morphing');
+      fullscreenPlayer.classList.add('morph-prep');
+
+      miniPlayerMorphClone.innerHTML = `
+        <div class="mini-player-morph-inner">
+          <div class="mini-player-morph-text">
+            <strong>${miniTitle.textContent || 'Now Playing'}</strong>
+            <span>Opening player...</span>
+          </div>
+          <div class="mini-player-morph-icon">▶</div>
+        </div>
+      `;
+
+      miniPlayerMorphClone.className = 'active';
+      miniPlayerMorphClone.style.left = miniRect.left + 'px';
+      miniPlayerMorphClone.style.top = miniRect.top + 'px';
+      miniPlayerMorphClone.style.width = miniRect.width + 'px';
+      miniPlayerMorphClone.style.height = miniRect.height + 'px';
+      miniPlayerMorphClone.style.borderRadius = '22px';
+
+      requestAnimationFrame(() => {
+        miniPlayerMorphClone.classList.add('animating');
+        miniPlayerMorphClone.style.left = targetRect.left + 'px';
+        miniPlayerMorphClone.style.top = targetRect.top + 'px';
+        miniPlayerMorphClone.style.width = targetRect.width + 'px';
+        miniPlayerMorphClone.style.height = targetRect.height + 'px';
+        miniPlayerMorphClone.style.borderRadius = '0px';
+      });
+
+      setTimeout(() => {
+        clearMiniPlayerMorphClone();
+      }, 650);
+
+      return true;
+    }
+
+    function openFullscreenPlayer() {
+      resetFullscreenDrag();
+      fullscreenPlayer.classList.remove('closing');
+      fullscreenPlayer.classList.add('active');
+      fullscreenPlayer.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('fullscreen-open');
+      updateFullscreenMeta();
+      buildWaveformForCurrentTrack();
+
+      animateMiniPlayerMorph();
+    }
+
+    function closeFullscreenPlayer() {
+      fullscreenPlayer.classList.add('closing');
+      fullscreenPlayer.classList.remove('active');
+      fullscreenPlayer.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('fullscreen-open', 'cinematic-entering');
+
+      setTimeout(() => {
+        fullscreenPlayer.classList.remove('closing');
+        resetFullscreenDrag();
+      }, 320);
+    }
+
+    function startFullscreenDrag(clientY) {
+      if (!fullscreenPlayer.classList.contains('active')) return;
+
+      isDraggingFullscreen = true;
+      dragMoved = false;
+      dragStartY = clientY;
+      currentDragY = 0;
+
+      fullscreenPlayerPanel.classList.add('dragging');
+    }
+
+    function moveFullscreenDrag(clientY) {
+      if (!isDraggingFullscreen) return;
+
+      currentDragY = Math.max(0, clientY - dragStartY);
+
+      if (currentDragY > 4) {
+        dragMoved = true;
+      }
+
+      const moveAmount = currentDragY;
+      const fadeAmount = Math.max(0.35, 1 - moveAmount / 500);
+      const bgScale = 1.18 - Math.min(0.08, moveAmount / 2000);
+      const bgOpacity = Math.max(0.08, 0.24 - moveAmount / 1200);
+
+      fullscreenPlayerPanel.style.transform = `translateY(${moveAmount}px) scale(${Math.max(0.96, 1 - moveAmount / 3000)})`;
+      fullscreenPlayerPanel.style.opacity = fadeAmount;
+
+      fullscreenBgArt.style.transform = `scale(${bgScale})`;
+      fullscreenBgArt.style.opacity = bgOpacity;
+    }
+
+    function endFullscreenDrag() {
+      if (!isDraggingFullscreen) return;
+
+      isDraggingFullscreen = false;
+
+      if (currentDragY > 140) {
+        closeFullscreenPlayer();
+        resetFullscreenDrag();
+        return;
+      }
+
+      fullscreenPlayerPanel.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
+      fullscreenBgArt.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
+
+      requestAnimationFrame(() => {
+        fullscreenPlayerPanel.style.transform = '';
+        fullscreenPlayerPanel.style.opacity = '';
+        fullscreenBgArt.style.transform = '';
+        fullscreenBgArt.style.opacity = '';
+      });
+
+      setTimeout(() => {
+        fullscreenPlayerPanel.classList.remove('dragging');
+        fullscreenPlayerPanel.style.transition = '';
+        fullscreenBgArt.style.transition = '';
+        fullscreenBgArt.style.opacity = '';
+      }, 260);
+    }
+
+    function triggerTrackSwitchAnimation() {
+      cards.forEach(c => c.classList.add('switching'));
+      setTimeout(() => {
+        cards.forEach(c => c.classList.remove('switching'));
+      }, 250);
+    }
+
+    function playTrack(index) {
+      if (index < 0 || index >= audios.length) return;
+
+      triggerTrackSwitchAnimation();
+      stopAllAudio();
+      resetVisuals();
+
+      currentIndex = index;
+      const audio = audios[index];
+      const card = cards[index];
+
+      audio.volume = Number(volumeSlider.value);
+
+      audio.play().then(() => {
+        card.classList.add('playing');
+        updateMiniPlayer();
+        savePlayerState();
+        buildWaveformForCurrentTrack();
+      }).catch(() => {
+        alert('Make sure your MP3 preview files are uploaded in the same folder as index.html');
+      });
+    }
+
+    function togglePlayPause() {
+      buzz(12);
+
+      if (currentIndex === -1) {
+        playTrack(0);
+        return;
+      }
+
+      const audio = audios[currentIndex];
+      const card = cards[currentIndex];
+
+      if (audio.paused) {
+        audio.volume = Number(volumeSlider.value);
+        audio.play();
+        card.classList.add('playing');
+      } else {
+        audio.pause();
+        card.classList.remove('playing');
+      }
+
+      updateMiniPlayer();
+      savePlayerState();
+    }
+
+    function playNext() {
+      if (audios.length === 0) return;
+      const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % audios.length;
+      playTrack(nextIndex);
+    }
+
+    function playPrev() {
+      if (audios.length === 0) return;
+      const prevIndex = currentIndex === -1 ? 0 : (currentIndex - 1 + audios.length) % audios.length;
+      playTrack(prevIndex);
+    }
+
+    function openTakeover() {
+      document.body.classList.add('takeover-open', 'cinematic-entering', 'rain-active');
+      cinematicTakeover.classList.add('active');
+      cinematicTakeover.setAttribute('aria-hidden', 'false');
+
+      takeoverVideo.currentTime = 0;
+      takeoverVideo.muted = true;
+      takeoverVideo.play().catch(() => {});
+
+      setTimeout(() => {
+        document.body.classList.remove('cinematic-entering');
+      }, 900);
+    }
+
+    function closeTakeover() {
+      cinematicTakeover.classList.remove('active');
+      cinematicTakeover.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('takeover-open', 'cinematic-entering');
+
+      if (audios.every(a => a.paused)) {
+        document.body.classList.remove('rain-active');
+      }
+
+      setTimeout(() => {
+        takeoverVideo.pause();
+        takeoverVideo.currentTime = 0;
+      }, 250);
+    }
+
+    cards.forEach((card, index) => {
+      const audio = audios[index];
+      const yt = card.querySelector('.yt-link');
+      const cardBar = card.querySelector('.progress-bar');
+
+      audio.volume = Number(volumeSlider.value);
+
+      card.addEventListener('click', () => {
+        const sameTrackPlaying = currentIndex === index && !audio.paused;
+
+        if (sameTrackPlaying) {
+          audio.pause();
+          card.classList.remove('playing');
+          updateMiniPlayer();
+          savePlayerState();
+        } else {
+          playTrack(index);
+        }
+      });
+
+      yt.addEventListener('click', (e) => e.stopPropagation());
+
+      audio.addEventListener('loadedmetadata', () => {
+        if (currentIndex === index) updateFullscreenMeta();
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        if (audio.duration) {
+          const percent = (audio.currentTime / audio.duration) * 100;
+          cardBar.style.width = percent + '%';
+
+          if (currentIndex === index) {
+            miniProgressBar.style.width = percent + '%';
+
+            if (!isSeekingFullscreen) {
+              fullscreenSeekBar.value = percent;
+            }
+
+            fullscreenCurrentTime.textContent = formatTime(audio.currentTime);
+            fullscreenDuration.textContent = formatTime(audio.duration);
+            syncWaveformWithAudio();
+          }
+        }
+
+        savePlayerState();
+      });
+
+      audio.addEventListener('ended', () => {
+        card.classList.remove('playing');
+        cardBar.style.width = '0%';
+
+        if (currentIndex === index) {
+          destroyWaveform();
+          playNext();
+        }
+      });
+
+      audio.addEventListener('pause', () => {
+        if (currentIndex === index && audio.currentTime < audio.duration) {
+          card.classList.remove('playing');
+          updateMiniPlayer();
+        }
+        savePlayerState();
+      });
+
+      audio.addEventListener('play', () => {
+        if (currentIndex === index) {
+          card.classList.add('playing');
+          updateMiniPlayer();
+        }
+        savePlayerState();
+      });
+    });
+
+    miniPlayer.addEventListener('click', (e) => {
+      if (
+        e.target.closest('#playPauseBtn') ||
+        e.target.closest('#prevBtn') ||
+        e.target.closest('#nextBtn') ||
+        e.target.closest('#volumeSlider')
+      ) {
+        return;
+      }
+
+      document.body.classList.add('cinematic-entering');
+      openFullscreenPlayer();
+
+      setTimeout(() => {
+        document.body.classList.remove('cinematic-entering');
+      }, 900);
+    });
+
+    miniPlayer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        document.body.classList.add('cinematic-entering');
+        openFullscreenPlayer();
+
+        setTimeout(() => {
+          document.body.classList.remove('cinematic-entering');
+        }, 900);
+      }
+    });
+
+    playPauseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlayPause();
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playPrev();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playNext();
+    });
+
+    volumeSlider.addEventListener('click', (e) => e.stopPropagation());
+    volumeSlider.addEventListener('input', () => {
+      applyVolume(volumeSlider.value);
+      savePlayerState();
+    });
+
+    fullscreenPlayPauseBtn.addEventListener('click', togglePlayPause);
+    fullscreenPrevBtn.addEventListener('click', playPrev);
+    fullscreenNextBtn.addEventListener('click', playNext);
+
+    fullscreenVolumeSlider.addEventListener('input', () => {
+      applyVolume(fullscreenVolumeSlider.value);
+      savePlayerState();
+    });
+
+    fullscreenSeekBar.addEventListener('input', () => {
+      if (currentIndex === -1) return;
+      const audio = audios[currentIndex];
+      if (!audio.duration) return;
+
+      isSeekingFullscreen = true;
+      const seekTime = (fullscreenSeekBar.value / 100) * audio.duration;
+      fullscreenCurrentTime.textContent = formatTime(seekTime);
+    });
+
+    fullscreenSeekBar.addEventListener('change', () => {
+      if (currentIndex === -1) return;
+      const audio = audios[currentIndex];
+      if (!audio.duration) return;
+
+      const seekTime = (fullscreenSeekBar.value / 100) * audio.duration;
+      audio.currentTime = seekTime;
+      isSeekingFullscreen = false;
+      updateFullscreenMeta();
+      syncWaveformWithAudio();
+      savePlayerState();
+    });
+
+    closeFullscreenPlayerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeFullscreenPlayer();
+    });
+
+    closeFullscreenBackdrop.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeFullscreenPlayer();
+    });
+
+    fullscreenPlayerPanel.addEventListener('click', (e) => e.stopPropagation());
+
+    fullscreenPlayerPanel.addEventListener('mousedown', (e) => {
+      if (
+        e.target.closest('#fullscreenSeekBar') ||
+        e.target.closest('#fullscreenVolumeSlider') ||
+        e.target.closest('#fullscreenPlayPauseBtn') ||
+        e.target.closest('#fullscreenPrevBtn') ||
+        e.target.closest('#fullscreenNextBtn') ||
+        e.target.closest('#closeFullscreenPlayer') ||
+        e.target.closest('#fullscreenYoutubeLink') ||
+        e.target.closest('#realWaveform')
+      ) return;
+
+      startFullscreenDrag(e.clientY);
+    });
+
+    document.addEventListener('mousemove', (e) => moveFullscreenDrag(e.clientY));
+    document.addEventListener('mouseup', () => endFullscreenDrag());
+
+    fullscreenPlayerPanel.addEventListener('touchstart', (e) => {
+      if (
+        e.target.closest('#fullscreenSeekBar') ||
+        e.target.closest('#fullscreenVolumeSlider') ||
+        e.target.closest('#fullscreenPlayPauseBtn') ||
+        e.target.closest('#fullscreenPrevBtn') ||
+        e.target.closest('#fullscreenNextBtn') ||
+        e.target.closest('#closeFullscreenPlayer') ||
+        e.target.closest('#fullscreenYoutubeLink') ||
+        e.target.closest('#realWaveform')
+      ) return;
+
+      startFullscreenDrag(e.touches[0].clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+      if (!isDraggingFullscreen) return;
+      moveFullscreenDrag(e.touches[0].clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchend', () => endFullscreenDrag());
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (cinematicTakeover.classList.contains('active')) {
+          closeTakeover();
+          return;
+        }
+        closeFullscreenPlayer();
+      }
+    });
+
+    if (albumCoverBlock && albumCoverArt) {
+      let rafId = null;
+
+      function setCoverTransform(xRatio, yRatio) {
+        const rotateY = xRatio * 8;
+        const rotateX = yRatio * -8;
+        const translateX = xRatio * 6;
+        const translateY = yRatio * 6;
+
+        albumCoverArt.style.transform = `
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          translateX(${translateX}px)
+          translateY(${translateY}px)
+          scale(1.03)
+        `;
+      }
+
+      function resetCoverTransform() {
+        albumCoverBlock.classList.remove('parallax-active');
+        albumCoverArt.style.transform = '';
+      }
+
+      albumCoverBlock.addEventListener('mousemove', (e) => {
+        const rect = albumCoverBlock.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const xRatio = (x / rect.width - 0.5) * 2;
+        const yRatio = (y / rect.height - 0.5) * 2;
+
+        albumCoverBlock.classList.add('parallax-active');
+
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          setCoverTransform(xRatio, yRatio);
+        });
+      });
+
+      albumCoverBlock.addEventListener('mouseleave', resetCoverTransform);
+    }
+
+    if (emailCaptureForm) {
+      const savedEmail = localStorage.getItem('lr_saved_email');
+      if (savedEmail) {
+        emailCaptureInput.value = savedEmail;
+      }
+
+      emailCaptureForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const value = emailCaptureInput.value.trim();
+        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+        if (!isValid) {
+          emailCaptureMessage.textContent = 'Enter a valid email first.';
+          return;
+        }
+
+        localStorage.setItem('lr_saved_email', value);
+        emailCaptureMessage.textContent = 'You’re locked in for future drops.';
+      });
+    }
+
+    featuredPreviewVideo.muted = true;
+    featuredPreviewVideo.play().catch(() => {});
+    takeoverTrigger.addEventListener('click', openTakeover);
+    closeTakeoverBtn.addEventListener('click', closeTakeover);
+    closeTakeoverBackdrop.addEventListener('click', closeTakeover);
+    takeoverVideo.addEventListener('ended', closeTakeover);
+
+    applyVolume(volumeSlider.value);
+    restorePlayerState();
+    updateMiniPlayer();
+  </script>
 </body>
 </html>
