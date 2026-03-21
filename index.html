@@ -47,7 +47,7 @@
 
       <button class="video-trigger-wrap" id="takeoverTrigger" type="button" aria-label="Open cinematic takeover">
         <div class="video-container cinematic-frame">
-          <video id="featuredPreviewVideo" preload="metadata" playsinline muted poster="my-second-thumbnail.jpg">
+          <video id="featuredPreviewVideo" preload="metadata" playsinline muted loop poster="my-second-thumbnail.jpg">
             <source src="dekalb-teaser.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -244,6 +244,29 @@
       <p>
         Kid Reign is a future lane for fun, positive, creative music made especially for children — built with heart, imagination, and good energy.
       </p>
+
+      <div class="kid-track-wrap">
+        <div class="album-track music-card kid-card"
+             data-index="3"
+             data-title="Little Jingle Stars"
+             data-artist="Kid Reign"
+             data-cover="kids-xmas-cover.jpg">
+          <div class="album-track-left">
+            <span class="album-track-number">K1</span>
+            <img src="kids-xmas-cover.jpg" alt="Little Jingle Stars" class="album-track-thumb" />
+            <div class="album-track-text">
+              <h4>Little Jingle Stars</h4>
+              <p>Holiday Special</p>
+            </div>
+          </div>
+
+          <div class="album-track-right">
+            <audio src="kids-xmas-preview.mp3"></audio>
+            <div class="progress-track"><div class="progress-bar"></div></div>
+            <a class="yt-link" href="https://youtu.be/qrbEsvOr7Vg?feature=shared" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -306,6 +329,8 @@
   <!-- MINI PLAYER -->
   <div class="mini-player" id="miniPlayer" role="button" tabindex="0" aria-label="Open fullscreen player">
     <div class="mini-player-top">
+      <img id="miniCover" src="my-music-thumbnail.jpg" class="mini-cover" alt="Current track cover" />
+
       <div class="mini-title-wrap">
         <div class="mini-title" id="miniTitle">No song playing</div>
         <div class="mini-hint">Tap for fullscreen</div>
@@ -501,6 +526,7 @@
 
     const miniPlayer = document.getElementById('miniPlayer');
     const miniTitle = document.getElementById('miniTitle');
+    const miniCover = document.getElementById('miniCover');
     const miniProgressBar = document.getElementById('miniProgressBar');
     const playPauseBtn = document.getElementById('playPauseBtn');
     const prevBtn = document.getElementById('prevBtn');
@@ -551,10 +577,6 @@
     let dragMoved = false;
     let wavesurfer = null;
     let syncingFromWaveform = false;
-
-    function buzz(ms = 18) {
-      if (navigator.vibrate) navigator.vibrate(ms);
-    }
 
     function formatTime(seconds) {
       if (!isFinite(seconds)) return '0:00';
@@ -690,7 +712,6 @@
       if (currentIndex === -1) return;
 
       const currentAudio = audios[currentIndex];
-
       localStorage.setItem('lr_current_index', String(currentIndex));
       localStorage.setItem('lr_current_time', String(currentAudio.currentTime || 0));
       localStorage.setItem('lr_volume', String(currentAudio.volume ?? 1));
@@ -714,6 +735,7 @@
 
       const coverSrc = cards[currentIndex].dataset.cover || cards[currentIndex].querySelector('img').src;
       miniTitle.textContent = cards[currentIndex].dataset.title;
+      miniCover.src = coverSrc;
       fullscreenTitle.textContent = cards[currentIndex].dataset.title || 'Untitled';
       fullscreenArtist.textContent = cards[currentIndex].dataset.artist || 'LEGXCY REIGN';
       fullscreenCover.src = coverSrc;
@@ -763,6 +785,7 @@
     function updateMiniPlayer() {
       if (currentIndex === -1) {
         miniTitle.textContent = 'No song playing';
+        miniCover.src = 'my-music-thumbnail.jpg';
         playPauseBtn.textContent = '▶';
         miniProgressBar.style.width = '0%';
         setWaveformsPlaying(false);
@@ -770,7 +793,9 @@
         return;
       }
 
+      const coverSrc = cards[currentIndex].dataset.cover || cards[currentIndex].querySelector('img').src;
       miniTitle.textContent = cards[currentIndex].dataset.title;
+      miniCover.src = coverSrc;
       playPauseBtn.textContent = audios[currentIndex].paused ? '▶' : '⏸';
       setWaveformsPlaying(!audios[currentIndex].paused);
       updateFullscreenMeta();
@@ -782,12 +807,6 @@
       fullscreenPlayerPanel.style.opacity = '';
       fullscreenBgArt.style.transform = '';
       fullscreenBgArt.style.opacity = '';
-    }
-
-    function clearZoomClone() {
-      zoomCardClone.innerHTML = '';
-      zoomCardClone.className = '';
-      zoomCardClone.style.cssText = '';
     }
 
     function clearMiniPlayerMorphClone() {
@@ -850,7 +869,6 @@
       document.body.classList.add('fullscreen-open');
       updateFullscreenMeta();
       buildWaveformForCurrentTrack();
-
       animateMiniPlayerMorph();
     }
 
@@ -868,12 +886,10 @@
 
     function startFullscreenDrag(clientY) {
       if (!fullscreenPlayer.classList.contains('active')) return;
-
       isDraggingFullscreen = true;
       dragMoved = false;
       dragStartY = clientY;
       currentDragY = 0;
-
       fullscreenPlayerPanel.classList.add('dragging');
     }
 
@@ -893,7 +909,6 @@
 
       fullscreenPlayerPanel.style.transform = `translateY(${moveAmount}px) scale(${Math.max(0.96, 1 - moveAmount / 3000)})`;
       fullscreenPlayerPanel.style.opacity = fadeAmount;
-
       fullscreenBgArt.style.transform = `scale(${bgScale})`;
       fullscreenBgArt.style.opacity = bgOpacity;
     }
@@ -944,8 +959,10 @@
       currentIndex = index;
       const audio = audios[index];
       const card = cards[index];
+      const coverSrc = card.dataset.cover || card.querySelector('img').src;
 
       audio.volume = Number(volumeSlider.value);
+      miniCover.src = coverSrc;
 
       audio.play().then(() => {
         card.classList.add('playing');
@@ -958,8 +975,6 @@
     }
 
     function togglePlayPause() {
-      buzz(12);
-
       if (currentIndex === -1) {
         playTrack(0);
         return;
@@ -1280,7 +1295,9 @@
         });
       });
 
-      albumCoverBlock.addEventListener('mouseleave', resetCoverTransform);
+      albumCoverBlock.addEventListener('mouseleave', () => {
+        resetCoverTransform();
+      });
     }
 
     if (emailCaptureForm) {
